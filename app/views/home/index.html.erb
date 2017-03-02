@@ -1,0 +1,14 @@
+<p>
+<h1>オンライン片付けサービス PeeReSpa</h1>
+</p>
+<p>
+<%= link_to "ユーザログイン", new_user_session_path, class: 'post' %>
+<%= link_to "ユーザ新規登録", new_user_registration_path, class: 'post' %>
+<%= link_to "ユーザログアウト", destroy_user_session_path, class: 'get' %>
+</p>
+
+<p>
+<%= link_to "サポータログイン", new_admin_session_path, class: 'post' %>
+<%= link_to "サポータ新規登録", new_admin_registration_path, class: 'post' %>
+<%= link_to "サポータログアウト", destroy_admin_session_path, class: 'get' %>
+</p>

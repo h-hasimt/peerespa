@@ -1,4 +1,45 @@
 Rails.application.routes.draw do
+  namespace :user do
+  get 'base/index'
+  resources :reserves
+  end
+
+  namespace :admin do
+  get 'base/index'
+  end
+
+devise_for :admins, controllers: {
+  sessions:      'admins/sessions',
+  passwords:     'admins/passwords',
+  registrations: 'admins/registrations'
+}
+devise_for :users, controllers: {
+  sessions:      'users/sessions',
+  passwords:     'users/passwords',
+  registrations: 'users/registrations'
+}
+
+  root "home#index"
+
+  get "/admin" => "admin/base#index"
+  get "/user" => "user/base#index"
+  #  get 'user/:user_id/reserves/new' => 'user/reserves#new'
+
+  # resources :reserves, only: [:create] do
+  #   collection do
+  #     post 'confirm'
+  #   end
+  # end
+
+# get '/reserves/new', :to => 'reserves#new', :as => :users
+
+  # resources :admins, only: [:show, :edit, :update]
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

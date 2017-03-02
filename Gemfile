@@ -45,3 +45,33 @@ group :development do
   gem 'spring'
 end
 
+# コンソールツール(デバッグ用)
+gem 'pry-rails'
+# ユーザ認証
+gem 'devise'
+# enumヘルパー
+gem 'enum_help'
+# 権限管理
+gem 'cancancan'
+# ページネーション
+gem 'kaminari'
+# 画像アップローダー
+gem 'carrierwave'
+# 外部ストレージへの画像アップロード
+gem 'fog'
+# 入力フォーム簡易作成
+gem 'simple_form'
+
+# bootstrap用gem
+# 使用するか未定のためコメント化
+# gem 'therubyracer'
+# gem 'twitter-bootstrap-rails'
+# gem 'bootstrap-material-design', '0.1.4'
+
+
+
+
+
+
+
+

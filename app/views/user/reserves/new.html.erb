@@ -1,0 +1,26 @@
+<h1>初回ヒアリング 予約フォーム</h1>
+
+
+<p></p>
+
+<%= simple_form_for [@reserve] do |f| %>
+  <%= f.simple_fields_for :user_id do |p| %>
+    <%= p.input :nickname, label: 'ニックネーム', as: :string, input_html: { value: current_user.nickname } %>
+    <%= p.input :Lname, label: '性', as: :string, input_html: { value: current_user.Lname } %>
+    <%= p.input :Fname, label: '名', as: :string, input_html: { value: current_user.Fname } %>
+    <%= p.input :Lname_kana, label: '性（カナ）', as: :string, input_html: { value: current_user.Lname_kana } %>
+    <%= p.input :Fname_kana, label: '名（カナ）', as: :string, input_html: { value: current_user.Fname_kana } %>
+    <%= p.input :age, label: '年齢', as: :select, collection: 15..100, selected: current_user.age %>
+    <%= p.input :sex, label: '性別', as: :select, collection: [ ['男性', 'male'],[ '女性', 'female'] ], selected: current_user.sex %>
+    <%= p.input :skype, label: 'skype id', as: :string, input_html: { value: current_user.skype} %>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.input :datetime, label: '予約希望日時', hint: "注意：「分」は0 or 30から選んでください。" %>
+    <%= f.input :detail, label: '気になることや聞いてみたいことなどあればご自由に記入ください。', as: :text %>
+   </div>
+
+  <div class="actions">
+    <%= f.submit '予約を希望する' %>
+  </div>
+<% end %>
