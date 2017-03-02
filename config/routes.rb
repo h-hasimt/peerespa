@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :user do
   get 'base/index'
+  resources :reserves
   end
 
   namespace :admin do
@@ -22,7 +23,16 @@ devise_for :users, controllers: {
 
   get "/admin" => "admin/base#index"
   get "/user" => "user/base#index"
-  # resources :users
+  #  get 'user/:user_id/reserves/new' => 'user/reserves#new'
+
+  # resources :reserves, only: [:create] do
+  #   collection do
+  #     post 'confirm'
+  #   end
+  # end
+
+# get '/reserves/new', :to => 'reserves#new', :as => :users
+
   # resources :admins, only: [:show, :edit, :update]
 
 

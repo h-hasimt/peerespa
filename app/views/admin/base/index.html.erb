@@ -3,4 +3,15 @@
 
 <p>id = <%= current_admin.id %></p>
 
-<%= link_to "サポータログアウト", destroy_admin_session_path, class: 'get' %>
+<% if current_admin.role == "support" then %>
+<h2> 私はサポーターです </h2>
+
+<% elsif current_admin.role == "manage" then %>
+<h2> 私はサポーター兼管理者です </h2>
+
+<% else %>
+  <h2> 許可されていないユーザです。ログアウトしてください。 </h2>
+
+<% end %>
+
+<%= link_to "サポータログアウト", destroy_admin_session_path, method: 'get' %>

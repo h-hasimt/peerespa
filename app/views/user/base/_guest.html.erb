@@ -1,0 +1,30 @@
+  <% if current_user.reserves.present? then %>
+    <h1>初回ヒアリング実施日</h1>
+    <p>初回ヒアリングは、<%= current_user.reserves.where(counseling: "pre").last.datetime %>に実施します。</p>
+       <p>
+    <% id = current_user.reserves.where(counseling: "pre").last.id %>
+    <%= link_to "予約変更", "/user/reserves/#{id}/edit", method: 'get' %>
+    <%= link_to "予約を取り消す", "/user/reserves/#{id}/", method: 'delete' %>
+    </p>
+  <% else %>
+    <h1>初回ヒアリングについて</h1>
+
+    <h2>こんな人にオススメです</h2>
+    <ul>
+    <li>自分で片付けられるようになりたい人</li>
+    <li>リバウンドしない片付けができるようになりたい人</li>
+    <li>積極的に学び行動する意思のある人</li>
+    </ul>
+
+    <h2>こんな人はご遠慮ください</h2>
+    <ul>
+    <li>片付けを代行してほしい人</li>
+    <li>指示を待つだけで自分から行動する意思のない人</li>
+    <li>知識だけがほしい人</li>
+    </ul>
+
+    <h2>さあ、片付けで自分を変えよう！</h2>
+    <p>
+    <%= link_to "予約を進める", new_user_reserf_path, method: 'get' %>
+    </p>
+  <% end %>

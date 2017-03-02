@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   enum sex: { male: 0, female: 1 }
-  enum role: {supecial: 1, general: 2}
+  enum role: { guest: 0, general: 1, special: 2 }
 
   belongs_to :admin
+  has_many :reserves, class_name: "User::Reserve"
 
 end

@@ -59,6 +59,8 @@ gem 'kaminari'
 gem 'carrierwave'
 # 外部ストレージへの画像アップロード
 gem 'fog'
+# 入力フォーム簡易作成
+gem 'simple_form'
 
 # bootstrap用gem
 # 使用するか未定のためコメント化

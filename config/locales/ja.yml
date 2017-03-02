@@ -5,6 +5,10 @@ ja:
     password_confirmation: パスワード（再確認）
     group_id: グループ名
     user: ユーザー
+    Fname: 名
+    Lname: 性
+    Fname_kana: 名（カナ）
+    Lname_kana: 性（カナ）
   date:
     abbr_day_names:
     - 日
