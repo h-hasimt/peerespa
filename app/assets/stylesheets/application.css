@@ -14,3 +14,14 @@
  *= require_tree .
  *= require_self
  */
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  background-color: #f8f8f8;
+}

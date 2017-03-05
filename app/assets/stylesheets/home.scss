@@ -1,3 +1,137 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron {
+  height: 100%;
+  background: url(main.jpeg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.jumbotron p {
+  font-size: 32px;
+}
+
+.servive_img {
+  min-height: 380px;
+  background: url(service.JPG) no-repeat center right;
+  background-size: cover;
+  padding-top: 10px;
+}
+
+.title_jp{
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.wrap {
+  margin-left: 30px;
+}
+
+.txt_arch {
+  position: absolute;
+  top: 30%;
+  padding-left: 10px;
+}
+.quality {
+  text-align: center;
+  min-height: 200px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+}
+
+.quality .img{
+  font-size: 50px;
+}
+
+.quality .sentence{
+  margin-top: 20px;
+}
+
+.supporter_image {
+  border-radius: 20px;
+  height: 90%;
+  width: 90%;
+  max-height: 300px;
+  max-width: 220px;
+}
+
+.profile_left {
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+}
+
+.profile_right {
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.change {
+  margin-bottom: 20px;
+}
+.word {
+  /*font-size: 16px;*/
+}
+
+.footer-arch {
+  position: relative;
+  padding: 30px;
+  background-color: #d3d3d3;
+}
+
+@media (max-width: 767px) {
+  .h2_name {
+    font-size: 30px;
+    font-family: 'Courier New', monospace;
+    border-bottom: thin dotted;
+  }
+
+  .h3_name {
+    font-size: 26px;
+    font-family: 'Courier New', monospace;
+  }
+
+  .title_jp{
+    font-size: 14px;
+    font-family: sans-serif;
+  }
+
+  .topic_jp{
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+
+  .txt_lay {
+      font-size: 16px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .h2_name {
+    font-size: 40px;
+    font-family: 'Courier New', monospace;
+    border-bottom: thin dotted;
+  }
+
+  .h3_name {
+    font-size: 28px;
+    font-family: 'Courier New', monospace;
+  }
+
+  .title_jp{
+    font-size: 16px;
+    font-family: sans-serif;
+  }
+
+  .topic_jp{
+    font-size: 22px;
+    font-family: sans-serif;
+  }
+
+  .txt_lay {
+      font-size: 18px;
+  }
+
+}

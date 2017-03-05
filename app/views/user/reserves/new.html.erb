@@ -17,8 +17,10 @@
 
   <div class="form-group">
     <%= f.input :datetime, label: '予約希望日時', hint: "注意：「分」は0 or 30から選んでください。" %>
+  </div>
+  <div class=class="form-control" rows="3">
     <%= f.input :detail, label: '気になることや聞いてみたいことなどあればご自由に記入ください。', as: :text %>
-   </div>
+  </div>
 
   <div class="actions">
     <%= f.submit '予約を希望する' %>
