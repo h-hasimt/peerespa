@@ -1,0 +1,12 @@
+<h2>目標設定情報</h2>
+<%= f.simple_fields_for :goal_id do |p| %>
+  <% if @profile.goal.nil? then %>
+    <%= p.input :room_cmt, label: '私は部屋を…します', as: :text %>
+    <%= p.input :self_cmt, label: '私は片付けを通して、…な自分に生まれ変わります', as: :text %>
+    <%= p.input :period_cmt, label: '私は…までに目標をコミットします', as: :text %>
+  <% else %>
+     <%= p.input :room_cmt, label: '私は部屋を…します', as: :text, input_html: { value: @profile.goal.room_cmt } %>
+    <%= p.input :self_cmt, label: '私は片付けを通して、…な自分に生まれ変わります', as: :text, input_html: { value: @profile.goal.self_cmt } %>
+    <%= p.input :period_cmt, label: '私は…までに目標をコミットします', as: :text, input_html: { value: @profile.goal.period_cmt } %>
+  <% end %>
+<% end %>

@@ -1,0 +1,22 @@
+<%= render 'user/unavibar' %>
+
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'user/usidebar' %>
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header"><%= current_user.nickname %>さんのプロフィール</h1>
+      <%= simple_form_for [@profile] do |f| %>
+        <%= render partial: "user", locals: { f: f } %>
+        <%= render partial: "house", locals: { f: f } %>
+        <%= render partial: "goal", locals: { f: f } %>
+        <%= render partial: "selfanaly", locals: { f: f } %>
+        <br>
+        <div class="actions">
+          <%= f.submit 'プロフィールを更新する' %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

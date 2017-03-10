@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
 
   belongs_to :admin
   has_many :reserves, class_name: "User::Reserve"
+  has_one :profile, class_name: "User::Profile"
 
 end

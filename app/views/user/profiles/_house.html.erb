@@ -1,0 +1,10 @@
+<h2>ユーザ住宅情報</h2>
+<%= f.simple_fields_for :house_id do |p| %>
+  <% if @profile.house.nil? then %>
+    <%= p.input :fplan, label: '間取り', as: :string %>
+    <%= p.input :size, label: '広さ(㎡)', as: :string %>
+  <% else %>
+    <%= p.input :fplan, label: '間取り', as: :string, input_html: { value: @profile.house.fplan } %>
+    <%= p.input :size, label: '広さ(㎡)', as: :string, input_html: { value: @profile.house.size }  %>
+  <% end %>
+<% end %>

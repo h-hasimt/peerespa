@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   namespace :user do
   get 'base/index'
-  resources :reserves
+  resources :reserves, only: [:new, :create, :edit, :update, :destroy]
+  resources :profiles, only: [:show, :update]
   end
 
   namespace :admin do

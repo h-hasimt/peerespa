@@ -1,0 +1,38 @@
+<h2>自己分析情報</h2>
+<%= f.simple_fields_for :selfanaly_id do |p| %>
+  <% if @profile.selfanaly.nil? then %>
+    <%= p.input :strength1, label: '私の強み（その1）', as: :string %>
+    <%= p.input :strength2, label: '私の強み（その2）', as: :string %>
+    <%= p.input :strength3, label: '私の強み（その3）', as: :string %>
+    <%= p.input :strength4, label: '私の強み（その4）', as: :string %>
+    <%= p.input :strength5, label: '私の強み（その5）', as: :string %>
+    <%= p.input :demerit1, label: '片付けないことによるあなたのデメリットは？（その1）', as: :text %>
+    <%= p.input :demerit2, label: '片付けないことによるあなたのデメリットは？（その2）', as: :text %>
+    <%= p.input :demerit3, label: '片付けないことによるあなたのデメリットは？（その3）', as: :text %>
+    <%= p.input :demerit4, label: '片付けないことによるあなたのデメリットは？（その4）', as: :text %>
+    <%= p.input :demerit5, label: '片付けないことによるあなたのデメリットは？（その5）', as: :text %>
+    <%= p.input :merit1, label: '片付けたことによるあなたのメリットは？（その1）', as: :text %>
+    <%= p.input :merit2, label: '片付けたことによるあなたのメリットは？（その2）', as: :text %>
+    <%= p.input :merit3, label: '片付けたことによるあなたのメリットは？（その3）', as: :text %>
+    <%= p.input :merit4, label: '片付けたことによるあなたのメリットは？（その4）', as: :text %>
+    <%= p.input :merit5, label: '片付けたことによるあなたのメリットは？（その5）', as: :text %>
+    <%= p.input :behave_type, label: '一番近いタイプは？', as: :select, collection: [ ['捨てることが苦手で部屋から物が出ていかない', 'output'],[ '必要がないものでもすぐ買ってしまうorもらい物が断れない', 'input'],[ '物がどこにあるかすぐにわからなくなる', 'stock'] ] %>
+  <% else %>
+    <%= p.input :strength1, label: '私の強み（その1）', as: :string, input_html: { value: @profile.selfanaly.strength1 } %>
+    <%= p.input :strength2, label: '私の強み（その2）', as: :string, input_html: { value: @profile.selfanaly.strength2 } %>
+    <%= p.input :strength3, label: '私の強み（その3）', as: :string, input_html: { value: @profile.selfanaly.strength3 } %>
+    <%= p.input :strength4, label: '私の強み（その4）', as: :string, input_html: { value: @profile.selfanaly.strength4 } %>
+    <%= p.input :strength5, label: '私の強み（その5）', as: :string, input_html: { value: @profile.selfanaly.strength5 } %>
+    <%= p.input :demerit1, label: '片付けないことによるあなたのデメリットは？（その1）', as: :text, input_html: { value: @profile.selfanaly.demerit1 } %>
+    <%= p.input :demerit2, label: '片付けないことによるあなたのデメリットは？（その2）', as: :text, input_html: { value: @profile.selfanaly.demerit2 } %>
+    <%= p.input :demerit3, label: '片付けないことによるあなたのデメリットは？（その3）', as: :text, input_html: { value: @profile.selfanaly.demerit3 } %>
+    <%= p.input :demerit4, label: '片付けないことによるあなたのデメリットは？（その4）', as: :text, input_html: { value: @profile.selfanaly.demerit4 } %>
+    <%= p.input :demerit5, label: '片付けないことによるあなたのデメリットは？（その5）', as: :text, input_html: { value: @profile.selfanaly.demerit5 } %>
+    <%= p.input :merit1, label: '片付けたことによるあなたのメリットは？（その1）', as: :text, input_html: { value: @profile.selfanaly.merit1 } %>
+    <%= p.input :merit2, label: '片付けたことによるあなたのメリットは？（その2）', as: :text, input_html: { value: @profile.selfanaly.merit2 } %>
+    <%= p.input :merit3, label: '片付けたことによるあなたのメリットは？（その3）', as: :text, input_html: { value: @profile.selfanaly.merit3 } %>
+    <%= p.input :merit4, label: '片付けたことによるあなたのメリットは？（その4）', as: :text, input_html: { value: @profile.selfanaly.merit4 } %>
+    <%= p.input :merit5, label: '片付けたことによるあなたのメリットは？（その5）', as: :text, input_html: { value: @profile.selfanaly.merit5 } %>
+    <%= p.input :behave_type, label: '一番近いタイプは？', as: :select, collection: [ ['捨てることが苦手で部屋から物が出ていかない', 'output'],[ '必要がないものでもすぐ買ってしまうorもらい物が断れない', 'input'],[ '物がどこにあるかすぐにわからなくなる', 'stock'] ], selected: @profile.selfanaly.behave_type %>
+  <% end %>
+<% end %>

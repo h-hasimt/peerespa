@@ -4,9 +4,11 @@
 <p>id = <%= current_admin.id %></p>
 
 <% if current_admin.role == "support" then %>
+<%= render 'support' %>
 <h2> 私はサポーターです </h2>
 
 <% elsif current_admin.role == "manage" then %>
+<%= render 'manage' %>
 <h2> 私はサポーター兼管理者です </h2>
 
 <% else %>

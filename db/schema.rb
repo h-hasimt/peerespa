@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301123120) do
+ActiveRecord::Schema.define(version: 20170308085020) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "", null: false
@@ -41,11 +41,57 @@ ActiveRecord::Schema.define(version: 20170301123120) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "user_goals", force: :cascade do |t|
+    t.text     "room_cmt",   limit: 65535
+    t.text     "self_cmt",   limit: 65535
+    t.text     "period_cmt", limit: 65535
+    t.text     "room_url",   limit: 65535
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_houses", force: :cascade do |t|
+    t.string   "fplan",      limit: 255
+    t.integer  "size",       limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_profiles", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4
+    t.integer  "house_id",     limit: 4
+    t.integer  "goal_id",      limit: 4
+    t.integer  "selfanaly_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "user_reserves", force: :cascade do |t|
     t.datetime "datetime"
     t.integer  "counseling", limit: 4
     t.text     "detail",     limit: 65535
     t.integer  "user_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_selfanalies", force: :cascade do |t|
+    t.string   "strength1",   limit: 255
+    t.string   "strength2",   limit: 255
+    t.string   "strength3",   limit: 255
+    t.string   "strength4",   limit: 255
+    t.string   "strength5",   limit: 255
+    t.string   "demerit1",    limit: 255
+    t.string   "demerit2",    limit: 255
+    t.string   "demerit3",    limit: 255
+    t.string   "demerit4",    limit: 255
+    t.string   "demerit5",    limit: 255
+    t.string   "merit1",      limit: 255
+    t.string   "merit2",      limit: 255
+    t.string   "merit3",      limit: 255
+    t.string   "merit4",      limit: 255
+    t.string   "merit5",      limit: 255
+    t.integer  "behave_type", limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,16 @@
+<div class="col-sm-3 col-md-2 sidebar">
+  <ul  class="nav nav-sidebar">
+    <li class="active"><a href="#">作業報告 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">進捗状況</a></li>
+    <li><a href="#">カウンセリング</a></li>
+  </ul>
+  <ul class="nav nav-sidebar">
+    <li><a href="">ギャラリー</a></li>
+    <li><a href="">タイムライン</a></li>
+    <li><a href="">お知らせ</a></li>
+ </ul>
+  <ul class="nav nav-sidebar">
+    <li><%= link_to "プロフィール", user_profile_path(id: current_user.id), class: 'get' %></li>
+    <li><a href="">ログアウト</a></li>
+  </ul>
+</div>
