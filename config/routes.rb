@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :reserves, only: [:new, :create, :edit, :update, :destroy]
   resources :profiles, only: [:show, :update]
   resources :actives
+  resources :progresses
   end
 
   namespace :admin do

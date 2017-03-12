@@ -1,0 +1,25 @@
+<%= render 'user/unavibar' %>
+
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'user/usidebar' %>
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header"><%= current_user.nickname %>さんの進捗状況</h1>
+      <h2><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;新規作成</h2>
+      <div>
+        <p>
+        <%= link_to "こちら", new_user_progress_path, class: 'get' %>をクリック。
+        </p>
+      </div>
+      <br>
+      <h2><i class="fa fa-flag-o" aria-hidden="true"></i>&nbsp;進捗状況一覧</h2>
+      <p>メインの作業場所は最上段に記載されます。</p>
+
+        <%= render partial: "progresslist", locals: { progresses: @progresses } %>
+
+      <%= paginate(@progresses) %>
+    </div>
+
+  </div>
+</div>

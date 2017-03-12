@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   belongs_to :admin
   has_many :reserves, class_name: "User::Reserve"
   has_many :actives, class_name: "User::Active"
+  has_many :progresses, class_name: "User::Progress"
+
   has_one :profile, class_name: "User::Profile"
 
 end

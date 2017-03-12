@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>作業場所</th>
+        <th>ステータス</th>
+        <th>ゴール</th>
+        <th>進捗状況</th>
+        <th>更新</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% progresses.each do |progress| %>
+      <tr>
+        <td><%= progress.name %></td>
+        <td><%= progress.status %></td>
+        <td><%= progress.goal %></td>
+        <td><%= progress.percent %>%</td>
+        <td><%= link_to "こちら", edit_user_progress_path(id: progress.id), class: 'get' %></td>
+      </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>

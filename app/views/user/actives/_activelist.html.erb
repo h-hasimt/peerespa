@@ -14,7 +14,7 @@
       <% actives.each do |active| %>
       <tr>
         <td><%= active.date %></td>
-        <td>洋室（暫定）</td>
+        <td><%= active.progress.name %></td>
         <td><%= truncate(active.done, length: 11, omission: '…') %></td>
         <td><%= link_to "こちら", user_active_path(id: active.id), class: 'get' %></td>
         <td><%= link_to "こちら", edit_user_active_path(id: active.id), class: 'get' %></td>

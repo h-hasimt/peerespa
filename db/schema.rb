@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310075400) do
+ActiveRecord::Schema.define(version: 20170312065057) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "", null: false
@@ -76,6 +76,17 @@ ActiveRecord::Schema.define(version: 20170310075400) do
     t.integer  "house_id",     limit: 4
     t.integer  "goal_id",      limit: 4
     t.integer  "selfanaly_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_progresses", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.integer  "status",     limit: 4
+    t.text     "goal",       limit: 65535
+    t.integer  "percent",    limit: 4
+    t.boolean  "is_main",                  default: false
+    t.integer  "user_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,23 @@
+<%= render 'user/unavibar' %>
+
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'user/usidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">進捗リストの作成</h1>
+      <%= simple_form_for [@progress] do |f| %>
+        <div class=class="form-control" rows="3">
+          <%= f.input :name, label: '作業場所名', as: :string %>
+          <%= f.input :goal, label: '最終目標', as: :text %>
+          <%= f.input :is_main, label: 'メインの作業場所として設定する', as: :boolean, hint:'設定すると、現在のメイン設定は解除されます。'%>
+        </div>
+
+        <div class="actions">
+          <%= f.submit '進捗リストを作成する' %>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

@@ -14,13 +14,13 @@
         <li class="dropdown"> <!--ドロップダウン化するliタグ-->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" href="">menu  <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">作業報告</a></li>
-            <li><a href="#">進捗状況</a></li>
+            <li><%= link_to "作業報告", user_actives_path, class: 'get' %></li>
+            <li><%= link_to "進捗状況", user_progresses_path, class: 'get' %></li>
             <li><a href="#">カウンセリング</a></li>
             <li><a href="#">ギャラリー</a></li>
             <li><a href="#">タイムライン</a></li>
             <li><a href="#">お知らせ</a></li>
-            <li><a href="/profiles/#{current_user.id}">プロフィール</a></li>
+            <li><%= link_to "プロフィール", user_profile_path(id: current_user.id), class: 'get' %></li>
           </ul>
          </li>
         <li><%= link_to "ログアウト", destroy_user_session_path, class: 'get' %></li>
