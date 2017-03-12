@@ -1,4 +1,5 @@
 class User::ProfilesController < ApplicationController
+  before_filter :authenticate_user!
 
   def show
     profile = User::Profile.find_by(user_id: params[:id])

@@ -5,6 +5,14 @@
     <%= render 'user/usidebar' %>
 
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <% if notice %>
+      <!-- devise alert -->
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+
       <h1 class="page-header">Dashboard(Special)</h1>
       <div class="row placeholders">
         <div class="col-xs-6 col-sm-3 placeholder">

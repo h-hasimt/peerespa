@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>日付</th>
+        <th>作業場所</th>
+        <th>概要</th>
+        <th>詳細</th>
+        <th>修正</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% actives.each do |active| %>
+      <tr>
+        <td><%= active.date %></td>
+        <td>洋室（暫定）</td>
+        <td><%= truncate(active.done, length: 11, omission: '…') %></td>
+        <td><%= link_to "こちら", user_active_path(id: active.id), class: 'get' %></td>
+        <td><%= link_to "こちら", edit_user_active_path(id: active.id), class: 'get' %></td>
+      </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>

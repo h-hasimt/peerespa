@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  root "home#index"
+
   namespace :user do
   get 'base/index'
   resources :reserves, only: [:new, :create, :edit, :update, :destroy]
   resources :profiles, only: [:show, :update]
+  resources :actives
   end
 
   namespace :admin do
@@ -19,8 +22,6 @@ devise_for :users, controllers: {
   passwords:     'users/passwords',
   registrations: 'users/registrations'
 }
-
-  root "home#index"
 
   get "/admin" => "admin/base#index"
   get "/user" => "user/base#index"

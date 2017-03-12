@@ -1,0 +1,29 @@
+<%= render 'user/unavibar' %>
+
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'user/usidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">作業報告の作成</h1>
+      <%= simple_form_for [@active] do |f| %>
+        <div class="form-group">
+          <%= f.input :date, label: '作業日時'%>
+        </div>
+        <div class=class="form-control" rows="3">
+          <%= f.input :progress_id, label: '作業場所', as: :text %>
+          <%= f.input :done, label: 'できたこと', as: :text %>
+          <%= f.input :undone, label: 'できなかったこと', as: :text %>
+          <%= f.input :cause, label: 'できなかった原因', as: :text %>
+          <%= f.input :solution, label: 'できるようにするための対策', as: :text %>
+          <%= f.input :nextstep, label: '次回の作業予定', as: :text %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit '作業報告を作成する' %>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

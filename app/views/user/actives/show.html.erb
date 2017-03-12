@@ -1,0 +1,23 @@
+<%= render 'user/unavibar' %>
+
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'user/usidebar' %>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header"><%= @active.date %> の作業報告内容</h1>
+      <h2>できたこと</h2>
+      <%= @active.done %>
+      <h2>できなかったこと</h2>
+      <%= @active.undone %>
+      <h2>できなかった原因</h2>
+      <%= @active.cause %>
+      <h2>できるようにするための対策</h2>
+      <%= @active.solution %>
+      <h2>次回の作業予定</h2>
+      <%= @active.nextstep %>
+      <h2>サポーターからのコメント</h2>
+      <%= @active.detail %>
+    </div>
+
+  </div>
+</div>
