@@ -1,15 +1,9 @@
-<h1>Admin::Base#index</h1>
-<p>Find me in app/views/admin/base/index.html.erb</p>
-
-<p>id = <%= current_admin.id %></p>
-
 <% if current_admin.role == "support" then %>
 <%= render 'support' %>
 <h2> 私はサポーターです </h2>
 
 <% elsif current_admin.role == "manage" then %>
 <%= render 'manage' %>
-<h2> 私はサポーター兼管理者です </h2>
 
 <% else %>
   <h2> 許可されていないユーザです。ログアウトしてください。 </h2>
