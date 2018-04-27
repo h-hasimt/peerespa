@@ -56,9 +56,9 @@ gem 'cancancan'
 # ページネーション
 gem 'kaminari'
 # 画像アップローダー
-gem 'carrierwave'
+#gem 'carrierwave'
 # 外部ストレージへの画像アップロード
-gem 'fog'
+#gem 'fog'
 # 入力フォーム簡易作成
 gem 'simple_form'
 
